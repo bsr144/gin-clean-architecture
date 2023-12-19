@@ -1,0 +1,40 @@
+# General application settings
+app:
+  name: davos-users
+  version: 1.0
+  debug: true
+
+# Database connection settings
+database:
+  host: your-db-host
+  port: 5432
+  username: your-db-username
+  password: your-db-password
+  name: your-db-name
+
+# Server configuration
+server:
+  port: 8080
+  timeout:
+    read: 30s
+    write: 30s
+    idle: 120s
+
+# Logging configuration
+logging:
+  level: 6
+  format: text
+
+# External services
+externalServices:
+  - name: EmailService
+    url: https://email.example.com
+    apiKey: abc123xyz
+  - name: PaymentGateway
+    url: https://payments.example.com
+    token: paytoken789
+
+# Feature toggles
+features:
+  newFeature: false
+  betaUserAccess: true

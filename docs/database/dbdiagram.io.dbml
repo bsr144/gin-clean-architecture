@@ -1,0 +1,51 @@
+Table users {
+  id int [pk, increment]
+  email varchar [unique]
+  password varchar
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table customers {
+  id int [pk, increment] 
+  user_id int [unique]
+  name varchar
+  phone varchar
+  address text
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table products {
+  id int [pk, increment] 
+  name varchar
+  description text
+  price decimal
+  stock_quantity int
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table orders {
+  id int [pk, increment] 
+  customer_id int
+  order_date timestamp
+  status varchar
+  total_amount decimal
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table order_items {
+  id int [pk, increment] 
+  order_id int
+  product_id int
+  quantity int
+  price_per_unit decimal
+  total_price decimal
+}
+
+Ref: customers.user_id > users.id
+Ref: orders.customer_id > customers.id
+Ref: order_items.order_id > orders.id
+Ref: order_items.product_id > products.id

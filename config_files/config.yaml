@@ -1,0 +1,35 @@
+# General application settings
+app:
+  name: dbo-be-task
+  version: 1.0
+
+# Database connection settings
+database:
+  host: postgres
+  port: 5432
+  username: postgres
+  password: password
+  name: dbo-be-task
+
+# Server configuration
+server:
+  rest:
+    port: 8080
+    bodySize: 8
+    debug: true
+    timeout:
+      read: 20
+      write: 20
+      idle: 120
+  rpc:
+    port: 50001
+
+# Logging configuration
+logging:
+  level: 6
+  format: text
+
+# Security
+security:
+  jwtsecret: dbo-be-abraham-purnomo-144
+  jwtexpirytime: 24
