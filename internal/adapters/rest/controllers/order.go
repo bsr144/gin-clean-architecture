@@ -36,7 +36,7 @@ func (c *OrderController) CreateOrder(ctx *gin.Context) {
 		dboError           *helpers.Error
 	)
 
-	dboError = c.ParserHelper.BindJSON(ctx, &createOrderRequest)
+	dboError = c.ParserHelper.BindJSON(ctx, &createOrderRequest, "createOrderRequest")
 
 	if dboError != nil {
 		return
@@ -108,7 +108,7 @@ func (c *OrderController) UpdateOrderByID(ctx *gin.Context) {
 		dboError           *helpers.Error
 	)
 
-	dboError = c.ParserHelper.BindJSON(ctx, &updateOrderRequest)
+	dboError = c.ParserHelper.BindJSON(ctx, &updateOrderRequest, "updateOrderRequest")
 
 	if dboError != nil {
 		return

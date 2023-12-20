@@ -35,7 +35,7 @@ func (c *CustomerController) UpsertCustomer(ctx *gin.Context) {
 		dboError              *helpers.Error
 	)
 
-	dboError = c.ParserHelper.BindJSON(ctx, &upsertCustomerRequest)
+	dboError = c.ParserHelper.BindJSON(ctx, &upsertCustomerRequest, "upsertCustomerRequest")
 
 	if dboError != nil {
 		return
@@ -65,7 +65,7 @@ func (c *CustomerController) UpdateCustomerByID(ctx *gin.Context) {
 		dboError              *helpers.Error
 	)
 
-	dboError = c.ParserHelper.BindJSON(ctx, &updateCustomerRequest)
+	dboError = c.ParserHelper.BindJSON(ctx, &updateCustomerRequest, "updateCustomerRequest")
 
 	if dboError != nil {
 		return

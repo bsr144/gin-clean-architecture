@@ -14,16 +14,18 @@ import (
 )
 
 type UserController struct {
-	UserUsecase user.UserUseCase
-	ErrorHelper *helpers.ErrorHelper
-	Log         *logrus.Logger
+	UserUsecase  user.UserUseCase
+	ErrorHelper  *helpers.ErrorHelper
+	ParserHelper *helpers.ParserHelper
+	Log          *logrus.Logger
 }
 
-func NewUserController(userUsecase user.UserUseCase, errorHelper *helpers.ErrorHelper, log *logrus.Logger) *UserController {
+func NewUserController(userUsecase user.UserUseCase, errorHelper *helpers.ErrorHelper, parserHelper *helpers.ParserHelper, log *logrus.Logger) *UserController {
 	return &UserController{
-		UserUsecase: userUsecase,
-		ErrorHelper: errorHelper,
-		Log:         log,
+		UserUsecase:  userUsecase,
+		ErrorHelper:  errorHelper,
+		ParserHelper: parserHelper,
+		Log:          log,
 	}
 }
 
