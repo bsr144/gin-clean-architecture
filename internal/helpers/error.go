@@ -67,7 +67,7 @@ func (e *ErrorHelper) NewError(code int, info, detail string) *Error {
 // Thanks to fiber utils package, could be accessed via: https://github.com/gofiber/fiber/blob/v2.51.0/utils
 func (e *ErrorHelper) statusMessage(code int) string {
 	if code < statusCodeMessageMin || code > statusCodeMessageMax {
-		return ""
+		return "status code out of scope (less than 400 OR more than 511)"
 	}
 	return statusCodeMessage[code]
 }
