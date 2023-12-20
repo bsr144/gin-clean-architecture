@@ -72,7 +72,7 @@ func bootstrapRESTServer(bootstrapConfig *config.BootstrapConfig) {
 
 	// Init controllers
 	customerController := controllers.NewCustomerController(errorHelperService, parserHelperService, bootstrapConfig.Log, customerUsecase)
-	userController := controllers.NewUserController(userUsecase, errorHelperService, bootstrapConfig.Log)
+	userController := controllers.NewUserController(userUsecase, errorHelperService, parserHelperService, bootstrapConfig.Log)
 	orderController := controllers.NewOrderController(errorHelperService, parserHelperService, bootstrapConfig.Log, orderUsecase)
 
 	// Init middlewares
